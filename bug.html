@@ -1,0 +1,11 @@
+This bug occurs when using Tailwind CSS's `@apply` directive with a class that contains a pseudo-element selector (like `::before` or `::after`).  The `@apply` directive doesn't properly handle these selectors, leading to unexpected styling issues or no styling at all.
+
+```html
+<div class="container">
+  <div class="relative">
+    <div class="absolute inset-0 @apply before:content-['\2713'] before:absolute before:top-0 before:left-0 before:text-green-500 before:text-xl"></div>
+  </div>
+</div>
+```
+
+In this example, the `before:content-['\2713']` and other `before` classes might not apply correctly, leaving the checkmark invisible or misplaced.
