@@ -1,0 +1,11 @@
+The solution involves avoiding the use of `@apply` for classes containing pseudo-element selectors.  Instead, apply the styles directly within the class definition.
+
+```html
+<div class="container">
+  <div class="relative">
+    <div class="absolute inset-0 before:content-['\2713'] before:absolute before:top-0 before:left-0 before:text-green-500 before:text-xl"></div>
+  </div>
+</div>
+```
+
+By defining the styles directly, Tailwind CSS can correctly process and apply the styles to the pseudo-element.
